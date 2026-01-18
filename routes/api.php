@@ -17,6 +17,13 @@ Route::group([
 });
 
 Route::group([
+    'middleware' => 'api',
+    'prefix' => 'micro'
+], function () {
+   Route::get('/allMicroempresas', [MicroempresaController::class, 'getAllMicroempresas']);
+});
+
+Route::group([
     'middleware' => 'auth:api',
     'prefix' => 'auth'
 ], function () {
